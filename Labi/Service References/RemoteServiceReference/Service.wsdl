@@ -1,0 +1,1618 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:import namespace="http://tempuri.org/myDataBaseDataSet.xsd" />
+      <s:import schemaLocation="http://localhost:58153/Service.asmx?schema=myDataBaseDataSet" namespace="http://tempuri.org/myDataBaseDataSet.xsd" />
+      <s:element name="GetAllServices">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllServicesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllServicesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/myDataBaseDataSet.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllServicesDirectlyFromDB">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllServicesDirectlyFromDBResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllServicesDirectlyFromDBResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/myDataBaseDataSet.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewServicesRow">
+        <s:complexType />
+      </s:element>
+      <s:element name="NewServicesRowResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NewServicesRowResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/myDataBaseDataSet.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteServiceWithID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteServiceWithIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteServiceWithIDResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getServiceByID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getServiceByIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getServiceByIDResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/myDataBaseDataSet.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="row">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/myDataBaseDataSet.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddServiceResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="row">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/myDataBaseDataSet.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateServiceResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateServicesTable">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateServicesTableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateServicesTableResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllPrices">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllPricesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllPricesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/myDataBaseDataSet.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllPricesDirectlyFromDB">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllPricesDirectlyFromDBResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllPricesDirectlyFromDBResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/myDataBaseDataSet.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewPricesRow">
+        <s:complexType />
+      </s:element>
+      <s:element name="NewPricesRowResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NewPricesRowResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/myDataBaseDataSet.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeletePriceWithID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeletePriceWithIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeletePriceWithIDResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPriceByID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPriceByIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getPriceByIDResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/myDataBaseDataSet.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePrice">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="row">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/myDataBaseDataSet.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePriceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdatePriceResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePricesTable">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdatePricesTableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdatePricesTableResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllCustomers">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllCustomersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllCustomersResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/myDataBaseDataSet.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllCustomersDirectlyFromDB">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllCustomersDirectlyFromDBResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllCustomersDirectlyFromDBResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/myDataBaseDataSet.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewCustomersRow">
+        <s:complexType />
+      </s:element>
+      <s:element name="NewCustomersRowResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NewCustomersRowResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/myDataBaseDataSet.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteCustomerWithID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteCustomerWithIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteCustomerWithIDResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCustomerByID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCustomerByIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getCustomerByIDResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/myDataBaseDataSet.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCustomer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="row">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/myDataBaseDataSet.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCustomerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateCustomerResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCustomersTable">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateCustomersTableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateCustomersTableResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllStaff">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllStaffResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllStaffResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/myDataBaseDataSet.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllAuditorsDirectlyFromDB">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllAuditorsDirectlyFromDBResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllAuditorsDirectlyFromDBResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/myDataBaseDataSet.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewStaffRow">
+        <s:complexType />
+      </s:element>
+      <s:element name="NewStaffRowResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NewStaffRowResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/myDataBaseDataSet.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteStaffWithID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteStaffWithIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteStaffWithIDResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getStaffById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getStaffByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getStaffByIdResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/myDataBaseDataSet.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateStaff">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="row">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/myDataBaseDataSet.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateStaffResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateStaffResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateStaffTable">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateStaffTableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateStaffTableResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllMaterials">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllMaterialsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllMaterialsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/myDataBaseDataSet.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllMaterialsDirectlyFromDB">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllMaterialsDirectlyFromDBResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllMaterialsDirectlyFromDBResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/myDataBaseDataSet.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewMaterialsRow">
+        <s:complexType />
+      </s:element>
+      <s:element name="NewMaterialsRowResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NewMaterialsRowResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/myDataBaseDataSet.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteMaterialWithID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteMaterialWithIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteMaterialWithIDResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getMaterialById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getMaterialByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getMaterialByIdResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/myDataBaseDataSet.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateMaterial">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="row">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/myDataBaseDataSet.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateMaterialResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateMaterialResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateMaterialsTable">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateMaterialsTableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateMaterialsTableResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetAllServicesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllServices" />
+  </wsdl:message>
+  <wsdl:message name="GetAllServicesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllServicesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllServicesDirectlyFromDBSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllServicesDirectlyFromDB" />
+  </wsdl:message>
+  <wsdl:message name="GetAllServicesDirectlyFromDBSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllServicesDirectlyFromDBResponse" />
+  </wsdl:message>
+  <wsdl:message name="NewServicesRowSoapIn">
+    <wsdl:part name="parameters" element="tns:NewServicesRow" />
+  </wsdl:message>
+  <wsdl:message name="NewServicesRowSoapOut">
+    <wsdl:part name="parameters" element="tns:NewServicesRowResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteServiceWithIDSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteServiceWithID" />
+  </wsdl:message>
+  <wsdl:message name="DeleteServiceWithIDSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteServiceWithIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="getServiceByIDSoapIn">
+    <wsdl:part name="parameters" element="tns:getServiceByID" />
+  </wsdl:message>
+  <wsdl:message name="getServiceByIDSoapOut">
+    <wsdl:part name="parameters" element="tns:getServiceByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:AddService" />
+  </wsdl:message>
+  <wsdl:message name="AddServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:AddServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateService" />
+  </wsdl:message>
+  <wsdl:message name="UpdateServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateServicesTableSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateServicesTable" />
+  </wsdl:message>
+  <wsdl:message name="UpdateServicesTableSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateServicesTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPricesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllPrices" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPricesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllPricesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPricesDirectlyFromDBSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllPricesDirectlyFromDB" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPricesDirectlyFromDBSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllPricesDirectlyFromDBResponse" />
+  </wsdl:message>
+  <wsdl:message name="NewPricesRowSoapIn">
+    <wsdl:part name="parameters" element="tns:NewPricesRow" />
+  </wsdl:message>
+  <wsdl:message name="NewPricesRowSoapOut">
+    <wsdl:part name="parameters" element="tns:NewPricesRowResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeletePriceWithIDSoapIn">
+    <wsdl:part name="parameters" element="tns:DeletePriceWithID" />
+  </wsdl:message>
+  <wsdl:message name="DeletePriceWithIDSoapOut">
+    <wsdl:part name="parameters" element="tns:DeletePriceWithIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPriceByIDSoapIn">
+    <wsdl:part name="parameters" element="tns:getPriceByID" />
+  </wsdl:message>
+  <wsdl:message name="getPriceByIDSoapOut">
+    <wsdl:part name="parameters" element="tns:getPriceByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePriceSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePrice" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePriceSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePriceResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePricesTableSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePricesTable" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePricesTableSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePricesTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCustomersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllCustomers" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCustomersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllCustomersResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCustomersDirectlyFromDBSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllCustomersDirectlyFromDB" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCustomersDirectlyFromDBSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllCustomersDirectlyFromDBResponse" />
+  </wsdl:message>
+  <wsdl:message name="NewCustomersRowSoapIn">
+    <wsdl:part name="parameters" element="tns:NewCustomersRow" />
+  </wsdl:message>
+  <wsdl:message name="NewCustomersRowSoapOut">
+    <wsdl:part name="parameters" element="tns:NewCustomersRowResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteCustomerWithIDSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteCustomerWithID" />
+  </wsdl:message>
+  <wsdl:message name="DeleteCustomerWithIDSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteCustomerWithIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCustomerByIDSoapIn">
+    <wsdl:part name="parameters" element="tns:getCustomerByID" />
+  </wsdl:message>
+  <wsdl:message name="getCustomerByIDSoapOut">
+    <wsdl:part name="parameters" element="tns:getCustomerByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCustomerSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateCustomer" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCustomerSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCustomersTableSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateCustomersTable" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCustomersTableSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateCustomersTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllStaffSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllStaff" />
+  </wsdl:message>
+  <wsdl:message name="GetAllStaffSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllStaffResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllAuditorsDirectlyFromDBSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllAuditorsDirectlyFromDB" />
+  </wsdl:message>
+  <wsdl:message name="GetAllAuditorsDirectlyFromDBSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllAuditorsDirectlyFromDBResponse" />
+  </wsdl:message>
+  <wsdl:message name="NewStaffRowSoapIn">
+    <wsdl:part name="parameters" element="tns:NewStaffRow" />
+  </wsdl:message>
+  <wsdl:message name="NewStaffRowSoapOut">
+    <wsdl:part name="parameters" element="tns:NewStaffRowResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteStaffWithIDSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteStaffWithID" />
+  </wsdl:message>
+  <wsdl:message name="DeleteStaffWithIDSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteStaffWithIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="getStaffByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:getStaffById" />
+  </wsdl:message>
+  <wsdl:message name="getStaffByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:getStaffByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateStaffSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateStaff" />
+  </wsdl:message>
+  <wsdl:message name="UpdateStaffSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateStaffResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateStaffTableSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateStaffTable" />
+  </wsdl:message>
+  <wsdl:message name="UpdateStaffTableSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateStaffTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllMaterialsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllMaterials" />
+  </wsdl:message>
+  <wsdl:message name="GetAllMaterialsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllMaterialsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllMaterialsDirectlyFromDBSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllMaterialsDirectlyFromDB" />
+  </wsdl:message>
+  <wsdl:message name="GetAllMaterialsDirectlyFromDBSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllMaterialsDirectlyFromDBResponse" />
+  </wsdl:message>
+  <wsdl:message name="NewMaterialsRowSoapIn">
+    <wsdl:part name="parameters" element="tns:NewMaterialsRow" />
+  </wsdl:message>
+  <wsdl:message name="NewMaterialsRowSoapOut">
+    <wsdl:part name="parameters" element="tns:NewMaterialsRowResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteMaterialWithIDSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteMaterialWithID" />
+  </wsdl:message>
+  <wsdl:message name="DeleteMaterialWithIDSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteMaterialWithIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="getMaterialByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:getMaterialById" />
+  </wsdl:message>
+  <wsdl:message name="getMaterialByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:getMaterialByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMaterialSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateMaterial" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMaterialSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateMaterialResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMaterialsTableSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateMaterialsTable" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMaterialsTableSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateMaterialsTableResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceSoap">
+    <wsdl:operation name="GetAllServices">
+      <wsdl:input message="tns:GetAllServicesSoapIn" />
+      <wsdl:output message="tns:GetAllServicesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllServicesDirectlyFromDB">
+      <wsdl:input message="tns:GetAllServicesDirectlyFromDBSoapIn" />
+      <wsdl:output message="tns:GetAllServicesDirectlyFromDBSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NewServicesRow">
+      <wsdl:input message="tns:NewServicesRowSoapIn" />
+      <wsdl:output message="tns:NewServicesRowSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteServiceWithID">
+      <wsdl:input message="tns:DeleteServiceWithIDSoapIn" />
+      <wsdl:output message="tns:DeleteServiceWithIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getServiceByID">
+      <wsdl:input message="tns:getServiceByIDSoapIn" />
+      <wsdl:output message="tns:getServiceByIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddService">
+      <wsdl:input message="tns:AddServiceSoapIn" />
+      <wsdl:output message="tns:AddServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateService">
+      <wsdl:input message="tns:UpdateServiceSoapIn" />
+      <wsdl:output message="tns:UpdateServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateServicesTable">
+      <wsdl:input message="tns:UpdateServicesTableSoapIn" />
+      <wsdl:output message="tns:UpdateServicesTableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPrices">
+      <wsdl:input message="tns:GetAllPricesSoapIn" />
+      <wsdl:output message="tns:GetAllPricesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPricesDirectlyFromDB">
+      <wsdl:input message="tns:GetAllPricesDirectlyFromDBSoapIn" />
+      <wsdl:output message="tns:GetAllPricesDirectlyFromDBSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NewPricesRow">
+      <wsdl:input message="tns:NewPricesRowSoapIn" />
+      <wsdl:output message="tns:NewPricesRowSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePriceWithID">
+      <wsdl:input message="tns:DeletePriceWithIDSoapIn" />
+      <wsdl:output message="tns:DeletePriceWithIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPriceByID">
+      <wsdl:input message="tns:getPriceByIDSoapIn" />
+      <wsdl:output message="tns:getPriceByIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePrice">
+      <wsdl:input message="tns:UpdatePriceSoapIn" />
+      <wsdl:output message="tns:UpdatePriceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePricesTable">
+      <wsdl:input message="tns:UpdatePricesTableSoapIn" />
+      <wsdl:output message="tns:UpdatePricesTableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCustomers">
+      <wsdl:input message="tns:GetAllCustomersSoapIn" />
+      <wsdl:output message="tns:GetAllCustomersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCustomersDirectlyFromDB">
+      <wsdl:input message="tns:GetAllCustomersDirectlyFromDBSoapIn" />
+      <wsdl:output message="tns:GetAllCustomersDirectlyFromDBSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NewCustomersRow">
+      <wsdl:input message="tns:NewCustomersRowSoapIn" />
+      <wsdl:output message="tns:NewCustomersRowSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCustomerWithID">
+      <wsdl:input message="tns:DeleteCustomerWithIDSoapIn" />
+      <wsdl:output message="tns:DeleteCustomerWithIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCustomerByID">
+      <wsdl:input message="tns:getCustomerByIDSoapIn" />
+      <wsdl:output message="tns:getCustomerByIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomer">
+      <wsdl:input message="tns:UpdateCustomerSoapIn" />
+      <wsdl:output message="tns:UpdateCustomerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomersTable">
+      <wsdl:input message="tns:UpdateCustomersTableSoapIn" />
+      <wsdl:output message="tns:UpdateCustomersTableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStaff">
+      <wsdl:input message="tns:GetAllStaffSoapIn" />
+      <wsdl:output message="tns:GetAllStaffSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAuditorsDirectlyFromDB">
+      <wsdl:input message="tns:GetAllAuditorsDirectlyFromDBSoapIn" />
+      <wsdl:output message="tns:GetAllAuditorsDirectlyFromDBSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NewStaffRow">
+      <wsdl:input message="tns:NewStaffRowSoapIn" />
+      <wsdl:output message="tns:NewStaffRowSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteStaffWithID">
+      <wsdl:input message="tns:DeleteStaffWithIDSoapIn" />
+      <wsdl:output message="tns:DeleteStaffWithIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getStaffById">
+      <wsdl:input message="tns:getStaffByIdSoapIn" />
+      <wsdl:output message="tns:getStaffByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStaff">
+      <wsdl:input message="tns:UpdateStaffSoapIn" />
+      <wsdl:output message="tns:UpdateStaffSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStaffTable">
+      <wsdl:input message="tns:UpdateStaffTableSoapIn" />
+      <wsdl:output message="tns:UpdateStaffTableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMaterials">
+      <wsdl:input message="tns:GetAllMaterialsSoapIn" />
+      <wsdl:output message="tns:GetAllMaterialsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMaterialsDirectlyFromDB">
+      <wsdl:input message="tns:GetAllMaterialsDirectlyFromDBSoapIn" />
+      <wsdl:output message="tns:GetAllMaterialsDirectlyFromDBSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NewMaterialsRow">
+      <wsdl:input message="tns:NewMaterialsRowSoapIn" />
+      <wsdl:output message="tns:NewMaterialsRowSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMaterialWithID">
+      <wsdl:input message="tns:DeleteMaterialWithIDSoapIn" />
+      <wsdl:output message="tns:DeleteMaterialWithIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getMaterialById">
+      <wsdl:input message="tns:getMaterialByIdSoapIn" />
+      <wsdl:output message="tns:getMaterialByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMaterial">
+      <wsdl:input message="tns:UpdateMaterialSoapIn" />
+      <wsdl:output message="tns:UpdateMaterialSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMaterialsTable">
+      <wsdl:input message="tns:UpdateMaterialsTableSoapIn" />
+      <wsdl:output message="tns:UpdateMaterialsTableSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllServices">
+      <soap:operation soapAction="http://tempuri.org/GetAllServices" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllServicesDirectlyFromDB">
+      <soap:operation soapAction="http://tempuri.org/GetAllServicesDirectlyFromDB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewServicesRow">
+      <soap:operation soapAction="http://tempuri.org/NewServicesRow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteServiceWithID">
+      <soap:operation soapAction="http://tempuri.org/DeleteServiceWithID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getServiceByID">
+      <soap:operation soapAction="http://tempuri.org/getServiceByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddService">
+      <soap:operation soapAction="http://tempuri.org/AddService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateService">
+      <soap:operation soapAction="http://tempuri.org/UpdateService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateServicesTable">
+      <soap:operation soapAction="http://tempuri.org/UpdateServicesTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPrices">
+      <soap:operation soapAction="http://tempuri.org/GetAllPrices" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPricesDirectlyFromDB">
+      <soap:operation soapAction="http://tempuri.org/GetAllPricesDirectlyFromDB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewPricesRow">
+      <soap:operation soapAction="http://tempuri.org/NewPricesRow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePriceWithID">
+      <soap:operation soapAction="http://tempuri.org/DeletePriceWithID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPriceByID">
+      <soap:operation soapAction="http://tempuri.org/getPriceByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePrice">
+      <soap:operation soapAction="http://tempuri.org/UpdatePrice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePricesTable">
+      <soap:operation soapAction="http://tempuri.org/UpdatePricesTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCustomers">
+      <soap:operation soapAction="http://tempuri.org/GetAllCustomers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCustomersDirectlyFromDB">
+      <soap:operation soapAction="http://tempuri.org/GetAllCustomersDirectlyFromDB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewCustomersRow">
+      <soap:operation soapAction="http://tempuri.org/NewCustomersRow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCustomerWithID">
+      <soap:operation soapAction="http://tempuri.org/DeleteCustomerWithID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCustomerByID">
+      <soap:operation soapAction="http://tempuri.org/getCustomerByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomer">
+      <soap:operation soapAction="http://tempuri.org/UpdateCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomersTable">
+      <soap:operation soapAction="http://tempuri.org/UpdateCustomersTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStaff">
+      <soap:operation soapAction="http://tempuri.org/GetAllStaff" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAuditorsDirectlyFromDB">
+      <soap:operation soapAction="http://tempuri.org/GetAllAuditorsDirectlyFromDB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewStaffRow">
+      <soap:operation soapAction="http://tempuri.org/NewStaffRow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteStaffWithID">
+      <soap:operation soapAction="http://tempuri.org/DeleteStaffWithID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStaffById">
+      <soap:operation soapAction="http://tempuri.org/getStaffById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStaff">
+      <soap:operation soapAction="http://tempuri.org/UpdateStaff" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStaffTable">
+      <soap:operation soapAction="http://tempuri.org/UpdateStaffTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMaterials">
+      <soap:operation soapAction="http://tempuri.org/GetAllMaterials" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMaterialsDirectlyFromDB">
+      <soap:operation soapAction="http://tempuri.org/GetAllMaterialsDirectlyFromDB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewMaterialsRow">
+      <soap:operation soapAction="http://tempuri.org/NewMaterialsRow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMaterialWithID">
+      <soap:operation soapAction="http://tempuri.org/DeleteMaterialWithID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMaterialById">
+      <soap:operation soapAction="http://tempuri.org/getMaterialById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMaterial">
+      <soap:operation soapAction="http://tempuri.org/UpdateMaterial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMaterialsTable">
+      <soap:operation soapAction="http://tempuri.org/UpdateMaterialsTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceSoap12" type="tns:ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllServices">
+      <soap12:operation soapAction="http://tempuri.org/GetAllServices" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllServicesDirectlyFromDB">
+      <soap12:operation soapAction="http://tempuri.org/GetAllServicesDirectlyFromDB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewServicesRow">
+      <soap12:operation soapAction="http://tempuri.org/NewServicesRow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteServiceWithID">
+      <soap12:operation soapAction="http://tempuri.org/DeleteServiceWithID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getServiceByID">
+      <soap12:operation soapAction="http://tempuri.org/getServiceByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddService">
+      <soap12:operation soapAction="http://tempuri.org/AddService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateService">
+      <soap12:operation soapAction="http://tempuri.org/UpdateService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateServicesTable">
+      <soap12:operation soapAction="http://tempuri.org/UpdateServicesTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPrices">
+      <soap12:operation soapAction="http://tempuri.org/GetAllPrices" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPricesDirectlyFromDB">
+      <soap12:operation soapAction="http://tempuri.org/GetAllPricesDirectlyFromDB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewPricesRow">
+      <soap12:operation soapAction="http://tempuri.org/NewPricesRow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePriceWithID">
+      <soap12:operation soapAction="http://tempuri.org/DeletePriceWithID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPriceByID">
+      <soap12:operation soapAction="http://tempuri.org/getPriceByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePrice">
+      <soap12:operation soapAction="http://tempuri.org/UpdatePrice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePricesTable">
+      <soap12:operation soapAction="http://tempuri.org/UpdatePricesTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCustomers">
+      <soap12:operation soapAction="http://tempuri.org/GetAllCustomers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCustomersDirectlyFromDB">
+      <soap12:operation soapAction="http://tempuri.org/GetAllCustomersDirectlyFromDB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewCustomersRow">
+      <soap12:operation soapAction="http://tempuri.org/NewCustomersRow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCustomerWithID">
+      <soap12:operation soapAction="http://tempuri.org/DeleteCustomerWithID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCustomerByID">
+      <soap12:operation soapAction="http://tempuri.org/getCustomerByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomer">
+      <soap12:operation soapAction="http://tempuri.org/UpdateCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomersTable">
+      <soap12:operation soapAction="http://tempuri.org/UpdateCustomersTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStaff">
+      <soap12:operation soapAction="http://tempuri.org/GetAllStaff" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAuditorsDirectlyFromDB">
+      <soap12:operation soapAction="http://tempuri.org/GetAllAuditorsDirectlyFromDB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewStaffRow">
+      <soap12:operation soapAction="http://tempuri.org/NewStaffRow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteStaffWithID">
+      <soap12:operation soapAction="http://tempuri.org/DeleteStaffWithID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStaffById">
+      <soap12:operation soapAction="http://tempuri.org/getStaffById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStaff">
+      <soap12:operation soapAction="http://tempuri.org/UpdateStaff" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStaffTable">
+      <soap12:operation soapAction="http://tempuri.org/UpdateStaffTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMaterials">
+      <soap12:operation soapAction="http://tempuri.org/GetAllMaterials" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMaterialsDirectlyFromDB">
+      <soap12:operation soapAction="http://tempuri.org/GetAllMaterialsDirectlyFromDB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewMaterialsRow">
+      <soap12:operation soapAction="http://tempuri.org/NewMaterialsRow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMaterialWithID">
+      <soap12:operation soapAction="http://tempuri.org/DeleteMaterialWithID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMaterialById">
+      <soap12:operation soapAction="http://tempuri.org/getMaterialById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMaterial">
+      <soap12:operation soapAction="http://tempuri.org/UpdateMaterial" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMaterialsTable">
+      <soap12:operation soapAction="http://tempuri.org/UpdateMaterialsTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="ServiceSoap" binding="tns:ServiceSoap">
+      <soap:address location="http://localhost:58153/Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceSoap12" binding="tns:ServiceSoap12">
+      <soap12:address location="http://localhost:58153/Service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
