@@ -6,7 +6,7 @@ namespace Core
     [TestFixture]
     class MaterialsLogicTests
     {
-        private static string cns = ConfigurationManager.ConnectionStrings["ServicesConnectionString"].ConnectionString;
+        private static string cns = ConfigurationManager.ConnectionStrings["myDataBaseConnectionString"].ConnectionString;
         private MaterialsLogic logic = new MaterialsLogic(ConnectionFactory.getConnection(DataProvider.SqlServer, cns));
 
         [TestCase("Adults", 100, true)]

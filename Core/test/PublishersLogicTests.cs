@@ -11,7 +11,7 @@ namespace Core
     [TestFixture]
     class CustomersLogicTests
     {
-        private static string cns = ConfigurationManager.ConnectionStrings["ServicesConnectionString"].ConnectionString;
+        private static string cns = ConfigurationManager.ConnectionStrings["myDataBaseConnectionString"].ConnectionString;
         private CustomersLogic logic = new CustomersLogic(ConnectionFactory.getConnection(DataProvider.SqlServer, cns));
 
         [TestCase("Google", "www.google.com", true)]

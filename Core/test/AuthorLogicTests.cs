@@ -11,7 +11,7 @@ namespace Core
     [TestFixture]
     class PriceLogicTests
     {
-        private static string cns = ConfigurationManager.ConnectionStrings["ServicesConnectionString"].ConnectionString;
+        private static string cns = ConfigurationManager.ConnectionStrings["myDataBaseConnectionString"].ConnectionString;
         private PricesLogic logic = new PricesLogic(ConnectionFactory.getConnection(DataProvider.SqlServer, cns));
 
         [TestCase("Klement", "Ivanov", true)]

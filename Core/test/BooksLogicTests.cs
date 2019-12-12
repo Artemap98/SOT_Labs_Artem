@@ -6,7 +6,7 @@ namespace Core
     [TestFixture]
     class ServicesLogicTests
     {
-        private static string cns = ConfigurationManager.ConnectionStrings["ServicesConnectionString"].ConnectionString;
+        private static string cns = ConfigurationManager.ConnectionStrings["myDataBaseConnectionString"].ConnectionString;
         private ServicesLogic logic = new ServicesLogic(ConnectionFactory.getConnection(DataProvider.SqlServer, cns));
 
         [TestCase("Inserterd Service", 10, 12.5f, 100, 100, true)]

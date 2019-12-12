@@ -83,7 +83,7 @@
     <Compile Include="transaction\AbstractTransactionImpl.cs" />
     <Compile Include="accessor\StaffAccessor.cs" />
     <Compile Include="logic\StaffLogic.cs" />
-    <Compile Include="test\AuditoriesLogicTests.cs" />
+    <Compile Include="test\StaffLogicTests.cs" />
     <Compile Include="test\AuthorLogicTests.cs" />
     <Compile Include="accessor\PricesAccessor.cs" />
     <Compile Include="logic\PricesLogic.cs" />
@@ -127,13 +127,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Books.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Books_log.ldf">
-      <DependentUpon>Books.mdf</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="myDataBase.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
