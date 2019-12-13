@@ -27,6 +27,7 @@ namespace Core
                 case "Customers":
                     fillCustomersRestrictions(ds, restrictions);
                     break;
+                default: break;
 
             }
             return restrictions;

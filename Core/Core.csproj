@@ -84,15 +84,15 @@
     <Compile Include="accessor\StaffAccessor.cs" />
     <Compile Include="logic\StaffLogic.cs" />
     <Compile Include="test\StaffLogicTests.cs" />
-    <Compile Include="test\AuthorLogicTests.cs" />
+    <Compile Include="test\MaterialsLogicTests.cs" />
     <Compile Include="accessor\PricesAccessor.cs" />
     <Compile Include="logic\PricesLogic.cs" />
     <Compile Include="accessor\ServicesAccessor.cs" />
     <Compile Include="logic\ServicesLogic.cs" />
-    <Compile Include="test\BooksLogicTests.cs" />
+    <Compile Include="test\ServicesLogicTests.cs" />
     <Compile Include="accessor\MaterialsAccessor.cs" />
     <Compile Include="logic\MaterialsLogic.cs" />
-    <Compile Include="test\CategoriesLogicTests.cs" />
+    <Compile Include="test\PricesLogicTests.cs" />
     <Compile Include="connection\ConnectionFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -102,7 +102,7 @@
     </Compile>
     <Compile Include="accessor\CustomersAccessor.cs" />
     <Compile Include="logic\CustomersLogic.cs" />
-    <Compile Include="test\PublishersLogicTests.cs" />
+    <Compile Include="test\CustomersLogicTests.cs" />
     <Compile Include="QueriesBuilder.cs" />
     <Compile Include="Restriction.cs" />
     <Compile Include="logic\SuperLogic.cs" />

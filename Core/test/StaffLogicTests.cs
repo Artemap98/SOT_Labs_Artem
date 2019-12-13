@@ -15,10 +15,11 @@ namespace Core
         private StaffLogic logic = new StaffLogic(ConnectionFactory.getConnection(DataProvider.SqlServer, cns));
 
         [TestCase("Nikolay Baskov","Dantist", true)]
-        public void AddStaffTest(string FIO, string Position, string Phone, bool expected)
+        public void AddStaffTest(string FIO, string Position, bool expected)
         {
             myDataBaseDataSet.StaffRow r = logic.NewStaffRow();
             r.FIO = FIO;
+            r.Position = Position;
           
             bool actual = logic.AddStaff(r);
             // was added
@@ -30,9 +31,9 @@ namespace Core
             Assert.AreEqual(FIO, inserted.FIO);
         }
 
-        [TestCase("Young", true)]
-        [TestCase("Students", false)]
-        public void AddStaffRestrictedTest(string FIO, bool expected)
+        [TestCase("Albert Einstein","Trainee", true)]
+        [TestCase("Danny De Vito","Student", false)]
+        public void AddStaffRestrictedTest(string FIO, string Position, bool expected)
         {
             myDataBaseDataSet.StaffRow r = logic.NewStaffRow();
             r.FIO = FIO;
@@ -43,15 +44,15 @@ namespace Core
             Assert.Pass("Not implemented restrictions yet.");
 
         }
-        [TestCase("Students", false)]
-        public void UpdateStaffTest(string FIO, bool expected)
+        [TestCase("Jason Statham","Administrator", true)]
+        public void UpdateStaffTest(string FIO, string Position, bool expected)
         {
             int id = logic.getLastID();
-            myDataBaseDataSet.StaffRow row = logic.getStaffByID(id);
+            //myDataBaseDataSet.StaffRow row = logic.getStaffByID(id);
 
             myDataBaseDataSet.StaffRow newRow = logic.NewStaffRow();
             newRow.FIO = FIO;
-           
+            newRow.Position = Position;
             bool result = logic.UpdateStaff(id, newRow);
             // was updated
             Assert.IsTrue(result);
@@ -61,12 +62,12 @@ namespace Core
             Assert.AreEqual(FIO, updated.FIO);
         }
 
-        [TestCase("Fishmen", true)]
-        public void DeleteStaffTest(string FIO, bool expected)
+        [TestCase("Karl Johnson","Assistant", true)]
+        public void DeleteStaffTest(string FIO, string Position, bool expected)
         {
             myDataBaseDataSet.StaffRow r = logic.NewStaffRow();
             r.FIO = FIO;
-        
+            r.Position = Position;
             bool wasAdded = logic.AddStaff(r);
             // was added
             Assert.IsTrue(wasAdded);
@@ -81,13 +82,15 @@ namespace Core
             // was deleted
             Assert.AreEqual(expected, actual);
         }
-        [TestCase("Update DB", true)]
+
+        [TestCase("John Doe","Update DB", true)]
         //[Ignore("Do not update DB")]
-        public void UpdateDbWithCacheTest(string FIO, bool expected)
+        public void UpdateDbWithCacheTest(string FIO, string Position, bool expected)
         {
             myDataBaseDataSet.StaffRow r = logic.NewStaffRow();
             r.FIO = FIO;
-          
+            r.Position = Position;
+
             bool actual = logic.AddStaff(r);
             // was added
             Assert.AreEqual(expected, actual);
