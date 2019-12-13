@@ -9,7 +9,7 @@ namespace Core
         private static string cns = ConfigurationManager.ConnectionStrings["myDataBaseConnectionString"].ConnectionString;
         private PricesLogic logic = new PricesLogic(ConnectionFactory.getConnection(DataProvider.SqlServer, cns));
 
-        [TestCase("Adults", 100, true)]
+        [TestCase("Adults", 100, 135, true)]
         public void AddPriceTest(string name, int id_material, int price , bool expected)
         {
             myDataBaseDataSet.PricesRow r = logic.NewPricesRow();
@@ -43,7 +43,7 @@ namespace Core
             Assert.Pass("Not implemented restrictions yet.");
 
         }
-        [TestCase("Students", 100,23234, false)]
+        [TestCase("Students", 100, 23234, false)]
         public void UpdatePriceTest(string name, int id_material, int price , bool expected)
         {
             int id = logic.getLastID();

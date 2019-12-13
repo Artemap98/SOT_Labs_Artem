@@ -32,7 +32,7 @@ namespace Labi
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-
+            cli = new ServiceSoapClient();
             ServicesCache = cli.GetAllServices();
             PricesCache = cli.GetAllPrices();
             StaffCache = cli.GetAllStaff();

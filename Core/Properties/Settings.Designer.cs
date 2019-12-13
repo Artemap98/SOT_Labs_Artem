@@ -23,6 +23,16 @@ namespace Core.Properties {
             }
         }
         
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\myDataBase.md" +
+            "f;Integrated Security=True;Connect Timeout=30")]
+        public string myDataBaseConnectionString1 {
+            get {
+                return ((string)(this["myDataBaseConnectionString1"]));
+            }
+        }
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
