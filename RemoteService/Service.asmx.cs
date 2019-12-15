@@ -26,7 +26,7 @@ namespace RemoteService
         private CustomersLogic CustomersLogic;
         public Service()
         {
-            string cns = ConfigurationManager.ConnectionStrings["myDataBaseConnectionString"].ConnectionString;
+            string cns = ConfigurationManager.ConnectionStrings["myDataBaseConnectionString1"].ConnectionString;
             Helper.console(cns);
             AbstractConnection c = ConnectionFactory.getConnection(DataProvider.SqlServer, cns);
 
